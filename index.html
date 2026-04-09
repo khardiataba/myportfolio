@@ -22,11 +22,10 @@
         }
         .font-luxury { font-family: 'Cinzel', serif; }
         
-        /* Correction de la visibilité et des tailles */
         .hero-title {
             line-height: 1;
             letter-spacing: -0.01em;
-            font-size: clamp(3rem, 10vw, 7.5rem); /* Taille adaptative plus petite */
+            font-size: clamp(2.5rem, 8vw, 6rem);
         }
 
         .nav-link {
@@ -37,10 +36,10 @@
         }
         .nav-link:hover { color: var(--gold); }
 
-        /* Conteneurs d'images optimisés */
-        .img-container {
+        /* Taille des images réduite pour l'aperçu */
+        .img-container-profile {
             width: 100%;
-            max-width: 500px; /* Taille maximale contrôlée */
+            max-width: 350px; 
             margin: 0 auto;
         }
 
@@ -50,7 +49,12 @@
             transition: all 0.6s ease;
         }
         
-        /* Assure que le texte sur blanc est visible */
+        .project-image-wrapper {
+            max-height: 180px; /* Hauteur limitée pour compacité */
+            overflow: hidden;
+            background: black;
+        }
+
         .footer-text { color: #1a1a1a; }
 
         .typing::after {
@@ -68,7 +72,6 @@
             <a href="#" class="text-lg font-luxury font-bold tracking-[0.2em] text-gold">KBA</a>
             <div class="hidden md:flex gap-10 uppercase font-medium">
                 <a href="#work" class="nav-link">Portfolio</a>
-                <a href="#about" class="nav-link">Vision</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
             <div class="text-[9px] uppercase tracking-widest text-gray-500 hidden sm:block">
@@ -81,18 +84,18 @@
         <div class="max-w-6xl mx-auto w-full grid lg:grid-cols-2 items-center gap-12">
             <div data-aos="fade-up">
                 <h1 class="hero-title font-luxury mb-4">
-                    BA<br><span class="text-gold italic font-light ml-12 md:ml-24">Khardiata</span>
+                    BA<br><span class="text-gold italic font-light ml-12 md:ml-20">Khardiata</span>
                 </h1>
-                <p class="text-sm md:text-base font-light text-gray-400 max-w-md mt-6">
-                    Développeuse Full-Stack MERN[cite: 4, 19]. Je conçois des solutions <span class="typing text-white"></span>
+                <p class="text-sm font-light text-gray-400 max-w-md mt-6">
+                    Développeuse Full-Stack MERN. Je conçois des solutions <span class="typing text-white"></span>
                 </p>
                 <div class="flex gap-6 mt-10">
-                    <a href="cv_KhardiataBa.pdf" download class="text-[9px] font-bold uppercase tracking-widest border-b border-gold/40 pb-1 hover:text-gold transition-all">Le CV [cite: 1]</a>
-                    <a href="#work" class="text-[9px] font-bold uppercase tracking-widest border-b border-white/10 pb-1 hover:border-white transition-all">Projets [cite: 19, 21]</a>
+                    <a href="cv_KhardiataBa.pdf" download class="text-[9px] font-bold uppercase tracking-widest border-b border-gold/40 pb-1 hover:text-gold transition-all">Le CV</a>
+                    <a href="#work" class="text-[9px] font-bold uppercase tracking-widest border-b border-white/10 pb-1 hover:border-white transition-all">Projets</a>
                 </div>
             </div>
             
-            <div class="img-container" data-aos="fade-in" data-aos-delay="300">
+            <div class="img-container-profile" data-aos="fade-in" data-aos-delay="300">
                 <div class="relative group">
                     <div class="absolute -inset-2 border border-gold/10 transition-transform duration-700"></div>
                     <img src="photo-profil.jpeg" alt="Khardiata Ba" class="relative z-10 w-full grayscale hover:grayscale-0 transition-all duration-1000 shadow-xl">
@@ -101,65 +104,55 @@
         </div>
     </section>
 
-    <section id="work" class="py-24 px-8 bg-[#0a0a0a]">
+    <section id="work" class="py-20 px-8 bg-[#0a0a0a]">
         <div class="max-w-6xl mx-auto">
-            <div class="mb-20">
-                <h2 class="text-gold text-[9px] uppercase tracking-[0.5em] mb-2 font-bold">Sélection [cite: 19]</h2>
+            <div class="mb-16">
+                <h2 class="text-gold text-[9px] uppercase tracking-[0.5em] mb-2 font-bold">Sélection</h2>
                 <h3 class="text-3xl font-luxury">Portfolio</h3>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="project-card p-5 group" data-aos="fade-up">
-                    <div class="overflow-hidden mb-6 bg-black">
-                        <img src="DEVPULSE.png" class="w-full aspect-video object-cover opacity-80 group-hover:opacity-100 transition-all" alt="DevPulse">
+            <div class="grid md:grid-cols-3 gap-6"> <div class="project-card p-4 group" data-aos="fade-up">
+                    <div class="project-image-wrapper mb-4">
+                        <img src="DEVPULSE.png" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all" alt="DevPulse">
                     </div>
-                    <span class="text-[8px] text-emerald-500 uppercase tracking-widest font-bold">Tooling [cite: 19, 44]</span>
-                    <h4 class="text-xl font-luxury mt-1">DevPulse</h4>
-                    <p class="text-gray-500 text-[11px] mt-2 font-light">Gestion sécurisée de snippets et déploiements. [cite: 19]</p>
+                    <span class="text-[7px] text-emerald-500 uppercase tracking-widest font-bold">Tooling</span>
+                    <h4 class="text-lg font-luxury mt-1">DevPulse</h4>
+                    <p class="text-gray-500 text-[10px] mt-2 font-light">Gestion sécurisée de snippets et déploiements.</p>
                 </div>
 
-                <div class="project-card p-5 group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="overflow-hidden mb-6 bg-black">
-                        <img src="en.gif" class="w-full aspect-video object-cover opacity-80 group-hover:opacity-100 transition-all" alt="Essence Nomade">
+                <div class="project-card p-4 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image-wrapper mb-4">
+                        <img src="en.gif" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all" alt="Essence Nomade">
                     </div>
-                    <span class="text-[8px] text-gold uppercase tracking-widest font-bold">Luxe [cite: 23, 34]</span>
-                    <h4 class="text-xl font-luxury mt-1">Essence Nomade</h4>
-                    <p class="text-gray-500 text-[11px] mt-2 font-light">E-commerce haute performance (Lighthouse 95+). [cite: 24]</p>
+                    <span class="text-[7px] text-gold uppercase tracking-widest font-bold">Luxe</span>
+                    <h4 class="text-lg font-luxury mt-1">Essence Nomade</h4>
+                    <p class="text-gray-500 text-[10px] mt-2 font-light">E-commerce haute performance (Lighthouse 95+).</p>
                 </div>
 
-                <div class="project-card p-5 group" data-aos="fade-up">
-                    <div class="overflow-hidden mb-6 bg-black">
-                        <img src="ubbi.png" class="w-full aspect-video object-cover opacity-80 group-hover:opacity-100 transition-all" alt="Yoonbi">
+                <div class="project-card p-4 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image-wrapper mb-4">
+                        <img src="kemetta.gif" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all" alt="Kemetta">
                     </div>
-                    <span class="text-[8px] text-gold uppercase tracking-widest font-bold">Mobilité [cite: 28]</span>
-                    <h4 class="text-xl font-luxury mt-1">Yoonbi</h4>
-                    <p class="text-gray-500 text-[11px] mt-2 font-light">Service VTC à Saint-Louis via React-Leaflet. [cite: 28, 30]</p>
-                </div>
-
-                <div class="project-card p-5 group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="overflow-hidden mb-6 bg-black">
-                        <img src="kemetta.gif" class="w-full aspect-video object-cover opacity-80 group-hover:opacity-100 transition-all" alt="Kemetta">
-                    </div>
-                    <span class="text-[8px] text-gold uppercase tracking-widest font-bold">Ed-Tech [cite: 29]</span>
-                    <h4 class="text-xl font-luxury mt-1">Kemetta</h4>
-                    <p class="text-gray-500 text-[11px] mt-2 font-light">Système LMS complet avec auth JWT & MongoDB. [cite: 29, 44]</p>
+                    <span class="text-[7px] text-gold uppercase tracking-widest font-bold">Ed-Tech</span>
+                    <h4 class="text-lg font-luxury mt-1">Kemetta</h4>
+                    <p class="text-gray-500 text-[10px] mt-2 font-light">Système LMS complet avec auth JWT & MongoDB.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="py-24 bg-white text-black text-center">
+    <footer id="contact" class="py-20 bg-white text-black text-center">
         <div class="max-w-4xl mx-auto px-8">
-            <h2 class="text-[9px] uppercase tracking-[0.4em] mb-8 font-bold text-gold">Contact [cite: 12, 13]</h2>
-            <p class="text-3xl md:text-5xl font-luxury mb-16 footer-text">
+            <h2 class="text-[9px] uppercase tracking-[0.4em] mb-8 font-bold text-gold">Contact</h2>
+            <p class="text-2xl md:text-4xl font-luxury mb-12 footer-text">
                 Élevons votre vision <span class="italic text-gold">digitale</span>.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-12 text-[11px] font-medium tracking-widest uppercase">
-                <a href="mailto:khardiataba163@gmail.com" class="border-b border-black pb-1 hover:text-gold hover:border-gold transition-all">Email [cite: 12]</a>
-                <a href="https://wa.me/221781488070" class="border-b border-black pb-1 hover:text-gold hover:border-gold transition-all">WhatsApp [cite: 13]</a>
+            <div class="flex flex-col sm:flex-row justify-center gap-10 text-[10px] font-medium tracking-widest uppercase">
+                <a href="mailto:khardiataba163@gmail.com" class="border-b border-black pb-1 hover:text-gold hover:border-gold transition-all">Email</a>
+                <a href="https://wa.me/221781488070" class="border-b border-black pb-1 hover:text-gold hover:border-gold transition-all">WhatsApp</a>
             </div>
-            <p class="text-[8px] text-gray-400 uppercase tracking-[0.4em] mt-20">
-                &copy; 2026 Khardiata BA — Engineered in Senegal[cite: 14].
+            <p class="text-[8px] text-gray-400 uppercase tracking-[0.4em] mt-16">
+                &copy; 2026 Khardiata BA — Engineered in Senegal.
             </p>
         </div>
     </footer>
@@ -182,7 +175,7 @@
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             header.style.background = window.scrollY > 50 ? "rgba(8,8,8,0.95)" : "transparent";
-            header.style.padding = window.scrollY > 50 ? "15px 32px" : "24px 32px";
+            header.style.padding = window.scrollY > 50 ? "12px 32px" : "24px 32px";
         });
     </script>
 </body>
